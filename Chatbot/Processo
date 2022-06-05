@@ -1,0 +1,33 @@
+import os
+
+
+def processar_resposta(resposta, nome):
+    if resposta == '1':
+        print(f'{os.linesep}{nome} Nossos serviços de Assistência Técnica, funciona de Segunda à Sexta das 08h00m às 17h00m. Para saber mais, entre em contato conosco para agendarmos um horário. Ou Aguarde para ser transaferido!{os.linesep}')
+    elif resposta == '2':
+        print(f'{os.linesep}{nome} Para Manuntenção de Computadores, indico entrar em contato ou ir pessoalmente para mais detalhes e para solução do problema ser efetiva e rápida!{os.linesep}')
+    elif resposta == '3':
+        print(f'{os.linesep}{nome} Estarei encaminhando o link via SMS com um código para acompanhar seu pedido!{os.linesep}')
+    elif resposta == '4':
+        print(f'{os.linesep}{nome} Miketec é uma Assistência Técnica focada em invoção e tecnologia, buscando novas tendências e metedologias para facilitar e ajudar o cliente em seu dia-a-dia. Localizada em: Av.Autonomistas, 1899 - Osasco-SP. Telefone Comercial:(11)3654-0211.{os.linesep}')
+    else:
+        print('Digite apenas 1, 2, 3 ou 4')
+
+
+def start():
+    # Apresentar o chatbot
+    print('Olá! Bem-vindo a Miketec!')
+    # pedir o nome
+    nome = input('Digite seu nome: ')
+    # pedir o e-mail
+    email = input('Digite seu e-mail: ')
+    while True:
+        # Oferer o menu de opções
+        resposta = input(
+            f'Em que posso ajudar hoje?{os.linesep}[1] - Assistênca Técnica{os.linesep}[2] - Manutenção de Computadores{os.linesep}[3] - Status do Processo{os.linesep}[5] - Sobre a Miketec{os.linesep}')
+        # Processar a resposta enviada
+        processar_resposta(resposta, nome)
+
+
+if __name__ == '__main__':
+    start()
